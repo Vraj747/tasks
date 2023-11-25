@@ -1,13 +1,19 @@
 /* Vraj Joshi 8912494*/
-body{
+html
+{
     font : normal normal normal 12px/1.5 Arial, Helvetica, sans-serif;
+
+}
+body{
     width: 100vw;
     height: 100vh;
     background-color: hsla(275, 76%, 59%, 0.5);
+    display: flex;
+    flex-direction: column;
 }
 h1{
     color:blueviolet;
-    font-size: 30px;
+    font-size: 2rem;
 }
 h2{
     color : #f02;
@@ -16,15 +22,19 @@ h2{
 header{
     background-color : hsl(192, 77%, 50%);
 }
+section{
+    display : flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
 main{
-    float : left;
-    width : 65vw;
+    flex: 1 1 70%;
     background-color : hsl(240, 7%, 78%);
 }
 aside{
-    float : right;
-    width : 25vw;
-    
+    flex: 2 1 30%;
     background-color : hsl(170, 85%, 34%);
 }
 
@@ -40,23 +50,23 @@ a:hover{
     color : #f02;
 }
 footer{
-    clear : both;
+    
     background-color : hsl(350, 78%, 55%);
 }
 .structural{
-    margin : 10px;
-    padding : 10px;
-    border : 2px solid black;
+    margin : 1rem;
+    padding : 1rem;
+    border : 0.1em solid black;
 }
 #para1{
     color : rgb(39, 119, 194);
 }
 #para2{
-    color : rgb(58, 46, 224);
+    color : rgb(51, 43, 165);
 }
 form{
-    border: 5px dashed magenta;
-    padding: 5px;
+    border: 2em dashed magenta;
+    padding: 0.1em;
 }
 input[type=text], input[type=email], input[type=submit], select, option{
     display: block;
@@ -88,13 +98,43 @@ nav ul li{
 }
 nav ul li a{
     color: indigo;
-    border: 2px solid indigo;
+    border: 0.1em solid indigo;
     background-color: cornsilk;
     text-decoration: none;
-    padding: 5px;
+    padding: 0.25em;
 }
 nav ul li a:hover{
     color: cornsilk;
     background-color: indigo;
     border-color: cornsilk;
+}
+img{
+    width: 80%;
+    height: 80%;
+}
+figure
+{
+    border: 0.1em solid black;
+}
+#gallery
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+}
+@media (max-width: 600px)
+{
+    html{
+        font-size: 10px;
+    }
+    #gallery{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    section{
+        display: block;
+    }
+
 }
